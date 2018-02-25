@@ -105,7 +105,7 @@ main{
 .content input[type="submit"]:last-child{
   width: 150px;
   display: block;
-  margin: 15px auto;
+  margin: 30px auto;
 }
 
 .remove{

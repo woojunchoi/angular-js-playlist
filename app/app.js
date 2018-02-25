@@ -8,6 +8,18 @@ spaceApp.controller('spaceController', ['$scope', function($scope) {
         $scope.ninjas.splice(index,1)
     }
 
+    $scope.addNinja = function() {
+        $scope.ninjas.push({
+            name:$scope.name,
+            belt:$scope.belt,
+            rate:parseInt($scope.rate),
+            available:true
+        })
+        $scope.name = ''
+        $scope.belt = ''
+        $scope.rate = ''
+    }
+
     $scope.ninjas = [
         {
             name:'woojun',
