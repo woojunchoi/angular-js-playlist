@@ -24,7 +24,7 @@
       <ul>
         <li ng-repeat='ninja in ninjas | orderBy:order | filter:search' ng-show="ninja.available">
           <h3>{{ninja.name}} - {{ninja.rate | currency:'$'}}</h3>
-          <div class='remove'>x</div>
+          <div class='remove' ng-click='removeNinja(ninja)'>x</div>
           <span class="belt" style="background:{{ninja.belt}}">{{ninja.belt}}</span>          
         </li>
       </ul>

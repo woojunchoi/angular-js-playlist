@@ -2,6 +2,12 @@ var spaceApp = angular.module('space',[]);
 
 
 spaceApp.controller('spaceController', ['$scope', function($scope) {
+    
+    $scope.removeNinja = function(ninja) {
+        var index = $scope.ninjas.indexOf(ninja)
+        $scope.ninjas.splice(index,1)
+    }
+
     $scope.ninjas = [
         {
             name:'woojun',
