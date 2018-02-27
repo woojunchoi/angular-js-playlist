@@ -1,4 +1,4 @@
-var spaceApp = angular.module('space',['ngRoute']);
+var spaceApp = angular.module('space',['ngRoute','ngAnimate']);
 
 spaceApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
