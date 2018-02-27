@@ -22,6 +22,8 @@ spaceApp.directive('spaceApp', [function() {
             ninjas: '=',
             title: '='
         },
+        transclude:true,
+        replace:true,
         templateUrl:'app/views/random.html',
         controller: function($scope) {
             $scope.random = Math.floor(Math.random()*4)
