@@ -1,0 +1,19 @@
+[{
+	"name": "woojun",
+	"belt": "black",
+	"rate": 50,
+	"available": true,
+	"thumb": "http://placehold.it/50x50/666666/ffffff"
+}, {
+	"name": "hongji",
+	"belt": "yellow",
+	"rate": 1000,
+	"available": true,
+	"thumb": "http://placehold.it/50x50/666666/ffffff"
+}, {
+	"name": "haru",
+	"belt": "red",
+	"rate": 500,
+	"available": true,
+	"thumb": "http://placehold.it/50x50/666666/ffffff"
+}]

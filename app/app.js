@@ -3,7 +3,8 @@ var spaceApp = angular.module('space',['ngRoute']);
 spaceApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
     .when('/home', {
-        templateUrl:'app/views/home.html'
+        templateUrl:'app/views/home.html',
+        controller:'spaceController'
     })
     .when('/directory', {
         templateUrl:'app/views/directory.html',
@@ -14,8 +15,23 @@ spaceApp.config(['$routeProvider', function($routeProvider){
     })
 }])
 
+spaceApp.directive('spaceApp', [function() {
+    return {
+        restrict:'E',
+        scope: {
+            ninjas: '=',
+            title: '='
+        },
+        templateUrl:'app/views/random.html',
+        controller: function($scope) {
+            $scope.random = Math.floor(Math.random()*4)
+        }
+    }
+}])
 
-spaceApp.controller('spaceController', ['$scope', function($scope) {
+
+
+spaceApp.controller('spaceController', ['$scope', '$http', function($scope, $http) {
     
     $scope.removeNinja = function(ninja) {
         var index = $scope.ninjas.indexOf(ninja)
@@ -34,28 +50,8 @@ spaceApp.controller('spaceController', ['$scope', function($scope) {
         $scope.rate = ''
     }
 
-    $scope.ninjas = [
-        {
-            name:'woojun',
-            belt:'black',
-            rate: 50,
-            available:true,
-            thumb:'http://placehold.it/50x50/666666/ffffff'
-        },
-        {
-            name:'hongji',
-            belt:'yellow',
-            rate:1000,
-            available:true,
-            thumb:'http://placehold.it/50x50/666666/ffffff'
-        },
-        {
-            name:'haru',
-            belt:'red',
-            rate:500,
-            available:true,
-            thumb:'http://placehold.it/50x50/666666/ffffff'
-        }
-    ]
+    $http.get('data/ninjas.json').then(function(response) {
+        $scope.ninjas = response.data
+    })
 
 }])
