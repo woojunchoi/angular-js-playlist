@@ -6,6 +6,9 @@ spaceApp.config(['$routeProvider', function($routeProvider){
         templateUrl:'app/views/home.html',
         controller:'spaceController'
     })
+    .when('/contact', {
+        templateUrl:'app/views/contact.html',
+    })
     .when('/directory', {
         templateUrl:'app/views/directory.html',
         controller:'spaceController'
@@ -50,6 +53,9 @@ spaceApp.controller('spaceController', ['$scope', '$http', function($scope, $htt
         $scope.name = ''
         $scope.belt = ''
         $scope.rate = ''
+    }
+    $scope.remove = function() {
+        $scope.ninjas = [];
     }
 
     $http.get('data/ninjas.json').then(function(response) {
